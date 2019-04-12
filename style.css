@@ -1,0 +1,22 @@
+html{
+    display: block;
+    margin: auto;
+    width: 60%;
+    background-color: antiquewhite;
+
+}
+#wrapper{
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: 200px auto auto;
+    grid-gap: 5px;
+}
+#header{
+    border: 1px solid black;
+    background-color: darkblue;
+}
+h1{
+    text-align: center;
+
+    color: antiquewhite;
+}
