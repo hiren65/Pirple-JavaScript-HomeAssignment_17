@@ -30,12 +30,6 @@ function evokeNotification1() {
 function evokeNotification(){
     //existing date and time
     //alert(new Date());
-    /*var now = new Date;
-    var utc_timestamp = Date.UTC(now.getFullYear(),now.getMonth(), now.getDate() ,
-        now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds());
-    console.log("UTC_Time" + utc_timestamp);*/
-    //let diff = Math.floor(Date.now());
-
     console.log("Now Time" + new Date().getTime() );
     let nowTime = new Date().getTime();
     //input date and time
@@ -72,7 +66,7 @@ function evokeNotification(){
 
 
 }
-
+//get message from input text for notification
 function getMessage (){
     let tt = document.getElementById("inputBox");
     textBox = tt.value;
@@ -82,7 +76,7 @@ function getMessage (){
     }
     return textBox;
 }
-
+//create notification function
 function myNotefication(){
     // Gets permission for notification and creates notification
     Notification.requestPermission().then(function (result) {
@@ -96,6 +90,7 @@ function myNotefication(){
         alert("See "+ err);
     });
 }
+//convert date string and hours:minutes in to time stamp
 function srtringToTimeStemp(str,hr,min) {
 
     let tt = new Date(str);
@@ -115,7 +110,7 @@ function srtringToTimeStemp(str,hr,min) {
 
 
 
-
+// Creating List of timestamp for notification
 function createTemplate(el,str,message) {
     myId++;
     let yy = document.createElement("LIST");

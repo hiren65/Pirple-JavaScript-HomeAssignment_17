@@ -8,7 +8,7 @@ html{
 #wrapper{
     display: grid;
     grid-template-columns: auto;
-    grid-auto-rows: 200px auto auto;
+    grid-auto-rows: 150px auto auto;
     grid-gap: 5px;
 }
 #header{
@@ -23,12 +23,13 @@ h1{
     text-align: center;
     color: rgba(248, 60, 67, 0.76);
     margin: 10px;
+    font-size: 1.4rem;
 }
 h2{
     text-align: center;
 }
 #detail{
-    background-color: #ccffcc;
+    background-color: rgba(23, 155, 253, 0.71);
     border: black 1px solid;
 }
 label{
@@ -45,6 +46,7 @@ span {
     text-align: center;
     height: 30px;
     font-size: 16px;
+    border: black 1px solid;
 }
 #inputDateBox{
     margin-top: 5px;
@@ -53,6 +55,7 @@ span {
     text-align: center;
     height: 30px;
     font-size: 16px;
+    border: black 1px solid;
 }
 #inputHoursBox{
     margin-top: 5px;
@@ -61,6 +64,7 @@ span {
     text-align: center;
     height: 30px;
     font-size: 16px;
+    border: black 1px solid;
 }
 #btnApply{
     width: 100px;
