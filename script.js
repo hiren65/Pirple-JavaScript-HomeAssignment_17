@@ -7,12 +7,28 @@ btnApply.addEventListener("click",evokeNotification1);
 
 
 function evokeNotification1() {
+    /*let nowTime = new Date().getTime();
+    console.log("Now Time" + nowTime );
+    let input = srtringToTimeStemp();
+    let ttstr = document.getElementById("inputDateBox").value;
+    let ttstr1 = document.getElementById("inputHoursBox").value;
+    let temp =  ttstr1.split(":");
+    console.log(temp[0]);
+    let inputTime =  srtringToTimeStemp(ttstr,temp[0],temp[1]);
+    console.log("input myTime" + inputTime);*/
+
     timeInterval = setInterval(evokeNotification,1000);
 }
 function evokeNotification(){
     //existing date and time
     //alert(new Date());
-    console.log("Time" + new Date().getTime());
+    /*var now = new Date;
+    var utc_timestamp = Date.UTC(now.getFullYear(),now.getMonth(), now.getDate() ,
+        now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds());
+    console.log("UTC_Time" + utc_timestamp);*/
+    //let diff = Math.floor(Date.now());
+
+    console.log("Now Time" + new Date().getTime() );
     let nowTime = new Date().getTime();
     //input date and time
     let ttstr = document.getElementById("inputDateBox").value;
@@ -36,7 +52,7 @@ function evokeNotification(){
 
 
     let inputTime =  srtringToTimeStemp(ttstr,temp[0],temp[1]);
-    console.log("myTime" + inputTime);
+    console.log("input myTime" + inputTime);
 
     if (nowTime>inputTime){
         setTimeout(myNotefication,1000);
@@ -82,7 +98,7 @@ function srtringToTimeStemp(str,hr,min) {
     let ss = tt.getSeconds();
     // inbuilt function
     //var d = new Date(yy, mm, yy, hh, mints, ss, 0);
-    var d1 = new Date(yy, mm, dd, 15, mints, ss, 0);
+    var d1 = new Date(yy, mm, dd, hh, mints, ss, 0);
     console.log(d1);
 
     return d1.getTime();
