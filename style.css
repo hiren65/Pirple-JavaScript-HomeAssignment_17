@@ -14,11 +14,58 @@ html{
 #header{
     border: 1px solid black;
     background-color: darkblue;
+    background-image: url("img/notification1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 h1{
     text-align: center;
-    color: antiquewhite;
+    color: rgba(248, 60, 67, 0.76);
+    margin: 10px;
 }
 h2{
     text-align: center;
+}
+#detail{
+    background-color: #ccffcc;
+    border: black 1px solid;
+}
+label{
+    margin: 10px 10px 10px 10px;
+    display: block;
+}
+span {
+    color: red;
+}
+#inputBox{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 170px;
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+}
+#inputDateBox{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 150px;
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+}
+#inputHoursBox{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 110px;
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+}
+#btnApply{
+    width: 100px;
+    height: 30px;
+    background-color: darkseagreen;
+    cursor: pointer;
+    margin: 10px;
 }
