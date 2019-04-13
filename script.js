@@ -2,6 +2,14 @@
 let textBox ;
 let timeInterval;
 
+let divMain = document.getElementById("list");
+let xx = document.createElement("UL");
+xx.setAttribute("id","ul");
+divMain.appendChild(xx);
+
+let myId  = 0;
+
+
 let btnApply = document.getElementById("btnApply");
 btnApply.addEventListener("click",evokeNotification1);
 
@@ -16,8 +24,8 @@ function evokeNotification1() {
     console.log(temp[0]);
     let inputTime =  srtringToTimeStemp(ttstr,temp[0],temp[1]);
     console.log("input myTime" + inputTime);*/
-
-    timeInterval = setInterval(evokeNotification,1000);
+    evokeNotification();
+    //timeInterval = setInterval(evokeNotification,1000);
 }
 function evokeNotification(){
     //existing date and time
@@ -53,6 +61,7 @@ function evokeNotification(){
 
     let inputTime =  srtringToTimeStemp(ttstr,temp[0],temp[1]);
     console.log("input myTime" + inputTime);
+    createTemplate(xx ,inputTime,getMessage());
 
     if (nowTime>inputTime){
         setTimeout(myNotefication,1000);
@@ -102,6 +111,22 @@ function srtringToTimeStemp(str,hr,min) {
     console.log(d1);
 
     return d1.getTime();
+}
+
+
+
+
+function createTemplate(el,str,message) {
+    myId++;
+    let yy = document.createElement("LIST");
+    yy.setAttribute("class","myList");
+    el.appendChild(yy);
+    yy.innerHTML = `
+                        <span class="timeStamp">${str}</span> 
+                        <span class="message">&nbsp  ${ message} </span>
+                        <input type="button" value="x" id="crossBtn${myId}"><br>
+                        
+                   `;
 }
 
 

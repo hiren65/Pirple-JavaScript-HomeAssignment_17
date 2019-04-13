@@ -69,3 +69,20 @@ span {
     cursor: pointer;
     margin: 10px;
 }
+.myList{
+    margin-top: 10px;
+    //border: black 1px solid;
+    display: block;
+}
+span.timeStamp{
+    color: darkblue;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px;
+}
+span.message{
+    color: #8b3747;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+}
