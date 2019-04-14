@@ -28,6 +28,10 @@ h1{
 h2{
     text-align: center;
 }
+h3{
+    color: #8b3747;
+    text-align: center;
+}
 #detail{
     background-color: rgba(23, 155, 253, 0.71);
     border: black 1px solid;
@@ -97,4 +101,14 @@ span.status{
     font-weight: bold;
     margin: 10px;
     margin-right: 20px;
+}
+#last{
+    background-color: black;
+    width: 100%;
+    min-height: 50px;
+}
+.foot{
+    color: white;
+    padding: 5px;
+    list-style: none;
 }

@@ -88,6 +88,7 @@ function evokeNotification(){
                 //clearInterval(timeInterval);
                 arrForStorage[i].status = false;
                 storeData(arrForStorage);
+                update(i);
             }
 
         } else {
@@ -149,7 +150,7 @@ function createTemplate(el,str,message,stat) {
     yy.innerHTML = `
                         <span class="timeStamp collection1">${str}</span> 
                         <span class="message collection1">&nbsp  ${ message} </span>
-                        <span class="status collection1" > &nbsp ${stat}</span>
+                        <span class="status" id="bull${myId}" > &nbsp ${stat}</span>
                         <input type="button" class="collection1" value="x" id="crossBtn${myId}"><br>
                         
                    `;
@@ -246,5 +247,14 @@ for (let i=0;i< xxxx.children.length;i++){
         arrForStorage.splice(i,1);
         storeData(arrForStorage);
 
-    })
+    });
+}
+/////////////////
+function update(i){
+    let xxxx = document.getElementById("ul");
+    //for (let i=0;i< xxxx.children.length;i++){
+        console.log("xxxx child tag " + xxxx.children[i].children[2].tagName);
+        let jjj = document.getElementById(xxxx.children[i].children[2].id);
+        jjj.innerText = false;
+    //}
 }
