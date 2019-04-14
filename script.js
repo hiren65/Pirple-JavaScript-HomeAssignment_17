@@ -113,7 +113,7 @@ function myNotefication(){
     Notification.requestPermission().then(function (result) {
         console.log(result);
         //alert("Got Notification Permission");
-        var notification = new Notification(getMessage());
+        var notification = new Notification('To Do List',{body:getMessage(),icon:"img/bell.png"});
         if (Notification.permission === "granted"){
             //alert("yes");
         }
