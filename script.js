@@ -22,6 +22,7 @@ btnApply.addEventListener("click",evokeNotification1);
 timeInterval = setInterval(evokeNotification,1000);
 
 function evokeNotification1() {
+
     clearInterval(timeInterval);
     timeInterval = setInterval(evokeNotification,1000);
     createListOfNotification();
@@ -32,6 +33,18 @@ function evokeNotification1() {
     //timeInterval = setInterval(evokeNotification,1000);
 }
 function evokeNotification(){
+
+    for (let ii=0;ii< xxxx.children.length;ii++){
+        console.log("xxxx child tag " + xxxx.children[ii].children[3].tagName);
+        let jjj = document.getElementById(xxxx.children[ii].children[3].id);
+        jjj.addEventListener("click",function () {
+            console.log("click " + ii);
+            jjj.parentNode.remove(jjj);
+            arrForStorage.splice(ii,1);
+            storeData(arrForStorage);
+
+        });
+    }
     if (arrForStorage === null){
         clearInterval(timeInterval);
         return;
@@ -55,31 +68,7 @@ function evokeNotification(){
     console.log("Now Time" + new Date().getTime() );
     let nowTime = new Date().getTime();
     //input date and time
-    /*let ttstr = document.getElementById("inputDateBox").value;
-    console.log(ttstr);
-    if (ttstr === ""){
-        alert("please select date");
-        clearInterval(timeInterval);
-        return;
-    }
-    //alert("input time " + ttstr);
-    let ttstr1 = document.getElementById("inputHoursBox").value;
-    //alert("input time " + ttstr1);
-    console.log("vvvvvv "+ ttstr1);
-    if (ttstr1 === ""){
-        alert("please select time and am/pm");
-        clearInterval(timeInterval);
-        return;
-    }
-    let temp =  ttstr1.split(":");
-    console.log(temp[0]);
 
-
-    let inputTime =  srtringToTimeStemp(ttstr,temp[0],temp[1]);
-    console.log("input myTime" + inputTime);
-    //storing Data
-    //storeData(inputTime);
-    createTemplate(xx ,inputTime,getMessage());*/
     for (let i=0;i<arrForStorage.length;i++){
        let  inputTime = arrForStorage[i].time;
         if (nowTime>inputTime){
@@ -238,23 +227,23 @@ function createListFromStorage(){
 ////////////
 //remove item from the list
 let xxxx = document.getElementById("ul");
-for (let i=0;i< xxxx.children.length;i++){
-    console.log("xxxx child tag " + xxxx.children[i].children[3].tagName);
-    let jjj = document.getElementById(xxxx.children[i].children[3].id);
+for (let ii=0;ii< xxxx.children.length;ii++){
+    console.log("xxxx child tag " + xxxx.children[ii].children[3].tagName);
+    let jjj = document.getElementById(xxxx.children[ii].children[3].id);
     jjj.addEventListener("click",function () {
-        console.log("click " + i);
+        console.log("click " + ii);
         jjj.parentNode.remove(jjj);
-        arrForStorage.splice(i,1);
+        arrForStorage.splice(ii,1);
         storeData(arrForStorage);
 
     });
 }
 /////////////////
 function update(i){
-    let xxxx = document.getElementById("ul");
+    //let xxxx = document.getElementById("ul");
     //for (let i=0;i< xxxx.children.length;i++){
         console.log("xxxx child tag " + xxxx.children[i].children[2].tagName);
-        let jjj = document.getElementById(xxxx.children[i].children[2].id);
-        jjj.innerText = false;
+        let jjj1 = document.getElementById(xxxx.children[i].children[2].id);
+        jjj1.innerText = false;
     //}
 }
