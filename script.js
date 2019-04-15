@@ -33,7 +33,7 @@ function evokeNotification1() {
     //timeInterval = setInterval(evokeNotification,1000);
 }
 function evokeNotification(){
-
+    //for "x"-button event update
     for (let ii=0;ii< xxxx.children.length;ii++){
         console.log("xxxx child tag " + xxxx.children[ii].children[3].tagName);
         let jjj = document.getElementById(xxxx.children[ii].children[3].id);
@@ -42,9 +42,9 @@ function evokeNotification(){
             jjj.parentNode.remove(jjj);
             arrForStorage.splice(ii,1);
             storeData(arrForStorage);
-
         });
     }
+
     if (arrForStorage === null){
         clearInterval(timeInterval);
         return;
@@ -167,7 +167,7 @@ function clearData() {
     console.log("Data Length " +localStorage.length );
 }
 
-///////////////////create list of notification /////////////////
+///////////////////create list of notification on html page /////////////////
 function createListOfNotification() {
     let mes = getMessage();
 
@@ -201,7 +201,8 @@ function createListOfNotification() {
     console.log("arrForStorage time "+ arrForStorage[0].time + " msg "+
                 arrForStorage[0].msg);
     storeData(arrForStorage);
-    createTemplate(xx,inputTime,mes,status);
+    let combineStr = new Date(inputTime);
+    createTemplate(xx,combineStr,mes,status);
 }
 
 function createListFromStorage(){
@@ -220,7 +221,9 @@ function createListFromStorage(){
     }
     console.log("get item array time " + arrForStorage[0].time + " msg "+arrForStorage[0].msg);
     for (let i=0;i<arrForStorage.length;i++){
-        createTemplate(xx,arrForStorage[i].time,arrForStorage[i].msg,arrForStorage[i].status);
+        console.log("convert seconds to time" + new Date(arrForStorage[i].time));
+        let convertMiliSecondsToTimeDate = new Date(arrForStorage[i].time);
+        createTemplate(xx,convertMiliSecondsToTimeDate,arrForStorage[i].msg,arrForStorage[i].status);
     }
 
 }
