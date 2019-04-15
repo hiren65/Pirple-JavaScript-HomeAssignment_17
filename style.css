@@ -5,10 +5,34 @@ html{
     background-color: antiquewhite;
 
 }
+.menu{
+    width: 100%;
+    height: 30px;
+    display: block;
+    border: 1px solid black;
+    background-color: black;
+    margin: 0;
+}
+.menuList{
+    //display: block;
+    margin: 0;
+}
+.l1{
+    display: inline-block;
+    color: white;
+    margin-right: 30px;
+    margin-top: 5px;
+    background-color: crimson;
+    width: 5%;
+    text-align: center;
+    border: 1px solid cornsilk;
+    cursor: pointer;
+    margin-left: -12px;
+}
 #wrapper{
     display: grid;
     grid-template-columns: auto;
-    grid-auto-rows: 150px auto auto;
+    grid-auto-rows: 30px 150px auto auto;
     grid-gap: 5px;
 }
 #header{
@@ -71,7 +95,7 @@ span {
     border: black 1px solid;
 }
 #btnApply{
-    width: 100px;
+    width: 125px;
     height: 30px;
     background-color: darkseagreen;
     cursor: pointer;
@@ -112,3 +136,7 @@ span.status{
     padding: 5px;
     list-style: none;
 }
+footer{
+    border: 1px solid cornsilk;
+}
+
