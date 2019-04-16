@@ -162,4 +162,12 @@ video{
     border: cornsilk;
     width: 60%;
 }
+#time{
+    display: block;
+    float: right;
+    color: #e2ff8b;
+    font-size: 1.7rem;
+    margin: 5px;
+    padding: 5px;
+}
 

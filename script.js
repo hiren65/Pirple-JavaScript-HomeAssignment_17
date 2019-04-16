@@ -250,3 +250,13 @@ function update(i){
         jjj1.innerText = false;
     //}
 }
+///////
+setInterval(updateTimeWatch,1000);
+function updateTimeWatch(){
+    let _nowT = document.getElementById("time");
+    let temp = function () {
+        return  new Date().getHours() + ":" + new Date().getMinutes() + ":"+new Date().getSeconds();
+    };
+    _nowT.innerText = temp();
+}
+
