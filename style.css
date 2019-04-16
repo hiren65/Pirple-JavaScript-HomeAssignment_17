@@ -3,11 +3,11 @@ html{
     margin: auto;
     width: 60%;
     background-color: antiquewhite;
-
+    font-size: 62.5%;
 }
 .menu{
     width: 100%;
-    height: 30px;
+    height: 40px;
     display: block;
     border: 1px solid black;
     background-color: black;
@@ -20,19 +20,22 @@ html{
 .l1{
     display: inline-block;
     color: white;
-    margin-right: 30px;
-    margin-top: 5px;
+    margin-right: 40px;
+    margin-top: 6px;
     background-color: crimson;
-    width: 5%;
+    width: 10%;
     text-align: center;
     border: 1px solid cornsilk;
     cursor: pointer;
     margin-left: -12px;
+    padding: 5px;
+    font-size: 1.2rem;
+
 }
 #wrapper{
     display: grid;
     grid-template-columns: auto;
-    grid-auto-rows: 30px 150px auto auto;
+    grid-auto-rows: 40px 150px auto auto;
     grid-gap: 5px;
 }
 #header{
@@ -47,14 +50,16 @@ h1{
     text-align: center;
     color: rgba(248, 60, 67, 0.76);
     margin: 10px;
-    font-size: 1.4rem;
+    font-size: 2.6rem;
 }
 h2{
     text-align: center;
+    font-size: 2.0rem;
 }
 h3{
     color: #8b3747;
     text-align: center;
+    font-size: 1.7rem;
 }
 #detail{
     background-color: rgba(23, 155, 253, 0.71);
@@ -73,7 +78,7 @@ span {
     width: 170px;
     text-align: center;
     height: 30px;
-    font-size: 16px;
+    font-size: 1.75rem;
     border: black 1px solid;
 }
 #inputDateBox{
@@ -106,22 +111,26 @@ span {
     //border: black 1px solid;
     display: block;
 }
+span{
+    font-size: 1.75rem;
+    color: #e2ff8b;
+}
 span.timeStamp{
     color: darkblue;
-    font-size: 16px;
+    font-size: 1.75rem;
     font-weight: 300;
     margin: 10px;
 }
 span.message,span.status{
     color: #8b3747;
-    font-size: 16px;
+    font-size: 1.75rem;
     font-weight: bold;
     margin: 10px;
     margin-right: 20px;
 }
 span.status{
     color: #fa3c44;
-    font-size: 16px;
+    font-size: 1.75rem;
     font-weight: bold;
     margin: 10px;
     margin-right: 20px;
@@ -135,8 +144,22 @@ span.status{
     color: white;
     padding: 5px;
     list-style: none;
+    font-size: 1.4rem;
 }
 footer{
     border: 1px solid cornsilk;
+}
+a{
+    text-decoration: none;
+    color: cornsilk;
+}
+a:hover{
+    color: chartreuse;
+}
+video{
+    display: block;
+    margin: auto;
+    border: cornsilk;
+    width: 60%;
 }
 
