@@ -105,15 +105,22 @@ span {
     background-color: darkseagreen;
     cursor: pointer;
     margin: 10px;
+    color: #fa3c44;
+    //font-weight: 400;
+    font: bold;
+}
+#btnApply:hover{
+    color: #e2ff8b;
 }
 .myList{
     margin-top: 10px;
     //border: black 1px solid;
     display: block;
+
 }
 span{
     font-size: 1.75rem;
-    color: #e2ff8b;
+    color: #ffda4a;
 }
 span.timeStamp{
     color: darkblue;
