@@ -71,16 +71,21 @@ function evokeNotification(){
 
     for (let i=0;i<arrForStorage.length;i++){
        let  inputTime = arrForStorage[i].time;
-        if (nowTime>inputTime){
+       console.log( inputTime + " <=> " + nowTime);
+        if (nowTime >= inputTime){
             if (arrForStorage[i].status === true){
                 setTimeout(myNotefication,1000);
                 //clearInterval(timeInterval);
                 arrForStorage[i].status = false;
                 storeData(arrForStorage);
-                update(i);
+                update(i);return;
+            }else {
+
+                console.log("pass");
             }
 
-        } else {
+        }
+        else {
             console.log("wait for time to pass");
         }
     }
@@ -167,7 +172,7 @@ function clearData() {
     console.log("Data Length " +localStorage.length );
 }
 
-///////////////////create list of notification on html page /////////////////
+///////////////////create list of notification on Storage /////////////////
 function createListOfNotification() {
     let mes = getMessage();
 
@@ -193,6 +198,16 @@ function createListOfNotification() {
 
     let inputTime =  srtringToTimeStemp(ttstr,temp[0],temp[1]);
     console.log("input myTime" + inputTime +" mes "+mes);
+    /////////////////////////
+    let nowTime = new Date().getTime();
+    //alert();
+    console.log(nowTime + " > " + inputTime);
+    if (nowTime > inputTime){
+        alert("Timer Setting is wrong!!");
+        status = false;
+
+    }
+    ////////////////////////
     let newObj = createObj(inputTime,mes,status);
     if (arrForStorage === null){
         arrForStorage = [];
@@ -257,6 +272,19 @@ function updateTimeWatch(){
     let temp = function () {
         return  new Date().getHours() + ":" + new Date().getMinutes() + ":"+new Date().getSeconds();
     };
-    _nowT.innerText = temp();
+    _nowT.innerText = tConvert(temp());
 }
 
+//////////
+//convert 24-hour time-of-day string to 12-hour time with AM/PM and no timezone
+function tConvert (time) {
+    // Check correct time format and split into components
+    time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+
+    if (time.length > 1) { // If time format correct
+        time = time.slice (1);  // Remove full string match value
+        time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+        time[0] = +time[0] % 12 || 12; // Adjust hours
+    }
+    return time.join (''); // return adjusted time or original string
+}

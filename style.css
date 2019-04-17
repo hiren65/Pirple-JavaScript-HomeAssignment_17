@@ -106,8 +106,7 @@ span {
     cursor: pointer;
     margin: 10px;
     color: #fa3c44;
-    //font-weight: 400;
-    font: bold;
+    font-weight: 500;
 }
 #btnApply:hover{
     color: #e2ff8b;
@@ -121,6 +120,7 @@ span {
 span{
     font-size: 1.75rem;
     color: #ffda4a;
+    font-weight: 500;
 }
 span.timeStamp{
     color: darkblue;
