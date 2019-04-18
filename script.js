@@ -1,4 +1,4 @@
-//alert();
+
 let textBox ;
 let timeInterval;
 let arrForStorage = [];
@@ -17,6 +17,7 @@ let myId  = 0;
 //clearData();
 createListFromStorage();
 //console.log("xx "+ xx.children);
+//here Button "Add Notification" clicks for event
 let btnApply = document.getElementById("btnApply");
 btnApply.addEventListener("click",evokeNotification1);
 timeInterval = setInterval(evokeNotification,1000);
@@ -44,7 +45,7 @@ function evokeNotification(){
             storeData(arrForStorage);
         });
     }
-
+    // check for array having data or not
     if (arrForStorage === null){
         clearInterval(timeInterval);
         return;
@@ -149,6 +150,7 @@ function createTemplate(el,str,message,stat) {
                         
                    `;
 }
+//object to be stored in arrForStorageArray
 function createObj(aa,bb,cc){
     return {
         time: aa,
@@ -156,7 +158,7 @@ function createObj(aa,bb,cc){
         status:cc,
     };
 }
-
+// data tobe stored in the form of array with key 'mykey'
 function storeData(data) {
     console.log("check updated array "+data);
     localStorage.set('myKey',data);
